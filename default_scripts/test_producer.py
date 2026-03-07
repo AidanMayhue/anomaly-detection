@@ -30,15 +30,12 @@ def generate_batch(n_rows: int = 100, inject_anomalies: bool = True) -> pd.DataF
 
     # Inject a few obvious anomalies so students can see the detector catch them
     if inject_anomalies and n_rows > 10:
-        try:
-            anomaly_indices = random.sample(range(n_rows), k=max(1, n_rows // 20))
-            for idx in anomaly_indices:
-                col = random.choice(["temperature", "humidity", "pressure", "wind_speed"])
-                # Push the value 5-8 standard deviations out
-                direction = random.choice([-1, 1])
-                df.at[idx, col] = df[col].mean() + direction * df[col].std() * random.uniform(5, 8)
-        except Exception as e:
-            print(f"[WARN] Failed to inject anomalies: {e}")
+        anomaly_indices = random.sample(range(n_rows), k=max(1, n_rows // 20))
+        for idx in anomaly_indices:
+            col = random.choice(["temperature", "humidity", "pressure", "wind_speed"])
+            # Push the value 5-8 standard deviations out
+            direction = random.choice([-1, 1])
+            df.at[idx, col] = df[col].mean() + direction * df[col].std() * random.uniform(5, 8)
 
     return df
 
@@ -47,22 +44,17 @@ def upload_batch(df: pd.DataFrame):
     timestamp = datetime.utcnow().strftime("%Y%m%dT%H%M%S")
     key = f"raw/sensors_{timestamp}.csv"
 
-    try:
-        csv_buffer = io.StringIO()
-        df.to_csv(csv_buffer, index=False)
+    csv_buffer = io.StringIO()
+    df.to_csv(csv_buffer, index=False)
 
-        s3.put_object(
-            Bucket=BUCKET_NAME,
-            Key=key,
-            Body=csv_buffer.getvalue(),
-            ContentType="text/csv"
-        )
-        print(f"[{datetime.utcnow().isoformat()}] Uploaded {len(df)} rows -> s3://{BUCKET_NAME}/{key}")
-        return key
-
-    except Exception as e:
-        print(f"[ERROR] Failed to upload batch to S3: {e}")
-        return None
+    s3.put_object(
+        Bucket=BUCKET_NAME,
+        Key=key,
+        Body=csv_buffer.getvalue(),
+        ContentType="text/csv"
+    )
+    print(f"Uploaded {len(df)} rows → s3://{BUCKET_NAME}/{key}")
+    return key
 
 
 if __name__ == "__main__":
@@ -70,9 +62,6 @@ if __name__ == "__main__":
     print(f"Producing batches every {interval}s. Ctrl+C to stop.")
 
     while True:
-        try:
-            df = generate_batch(n_rows=100, inject_anomalies=True)
-            upload_batch(df)
-        except Exception as e:
-            print(f"[ERROR] Batch loop error: {e}")
+        df = generate_batch(n_rows=100, inject_anomalies=True)
+        upload_batch(df)
         time.sleep(interval)
