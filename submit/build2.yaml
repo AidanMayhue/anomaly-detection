@@ -86,7 +86,7 @@ Resources:
         - IpProtocol: tcp
           FromPort: 22
           ToPort: 22
-          CidrIp: '10.0.0.2/32'   # <-- UPDATE THIS to your IP, e.g. '1.2.3.4/32'
+          CidrIp: '73.147.27.253/32'   # <-- UPDATE THIS to your IP, e.g. '1.2.3.4/32'
         - IpProtocol: tcp
           FromPort: 8000
           ToPort: 8000
