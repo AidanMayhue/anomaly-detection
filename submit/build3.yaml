@@ -46,7 +46,7 @@ Resources:
 
             # Clone your forked repo
             cd /home/ubuntu
-            git clone 'https://github.com/YOUR_USERNAME/anomaly-detection.git'
+            git clone 'https://github.com/AidanMayhue/anomaly-detection.git'
             chown -R ubuntu:ubuntu anomaly-detection
 
             # Create virtual environment and install requirements
