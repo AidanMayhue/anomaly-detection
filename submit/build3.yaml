@@ -11,7 +11,7 @@ Resources:
     Properties:
       # Ubuntu 24.04 LTS in us-east-1 -- update AMI if using a different region:
       # https://cloud-images.ubuntu.com/locator/ec2/
-      ImageId: 'ami-0f5d1713c0c04db5c'   # <-- UPDATE THIS if not in us-east-1
+      ImageId: 'ami-0b6c6ebed2801a5cb'   # <-- UPDATE THIS if not in us-east-1
       InstanceType: t3.micro
       KeyName: 'sds'        # <-- UPDATE THIS
       IamInstanceProfile:
