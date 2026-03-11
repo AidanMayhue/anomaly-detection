@@ -1,0 +1,1192 @@
+2026-03-09 23:36:40,832  INFO      app  FastAPI app starting. Bucket: data-project-anomalybucket-5kf0ho7bxcvy
+2026-03-09 23:36:41,069  INFO      uvicorn.error  Started server process [3972]
+2026-03-09 23:36:41,069  INFO      uvicorn.error  Waiting for application startup.
+2026-03-09 23:36:41,070  INFO      uvicorn.error  Application startup complete.
+2026-03-09 23:36:41,071  INFO      uvicorn.error  Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-03-09 23:42:43,752  INFO      app  SNS subscription confirmed via URL: https://sns.us-east-1.amazonaws.com/?Action=ConfirmSubscription&TopicArn=arn:aws:sns:us-east-1:302263072439:ds5220-dp1&Token=2336412f37fb687f5d51e6e2425929f52e8e353ee0e291642d9c1347714b397f07019855238c8ae64aff7d20389ab435316abc2897318d0b33bc7335310e0a7a93a0804cd193aa9b5c29acf59270eda7e10fadc275ed49197cb40da11971cc28ae7cdfb6b61662d94438e4d747f23216
+2026-03-09 23:51:26,665  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260309T235125.csv -- queuing for processing
+2026-03-09 23:51:26,666  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260309T235125.csv
+2026-03-09 23:51:26,747  INFO      processor  Loaded 100 rows from raw/sensors_20260309T235125.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 23:51:26,816  INFO      baseline  No existing baseline found -- starting fresh
+2026-03-09 23:51:26,819  INFO      baseline  Baseline updated -- channel: temperature | observations: 0 -> 100 | mean: 21.9723 | std: 2.5691
+2026-03-09 23:51:26,819  INFO      baseline  Baseline updated -- channel: humidity | observations: 0 -> 100 | mean: 54.9075 | std: 5.7817
+2026-03-09 23:51:26,820  INFO      baseline  Baseline updated -- channel: pressure | observations: 0 -> 100 | mean: 1012.4773 | std: 3.4701
+2026-03-09 23:51:26,820  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 0 -> 100 | mean: 10.2753 | std: 2.5091
+2026-03-09 23:51:26,823  INFO      detector  Z-score check -- channel: temperature | flagged: 3/100
+2026-03-09 23:51:26,824  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-09 23:51:26,825  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-09 23:51:26,826  INFO      detector  Z-score check -- channel: wind_speed | flagged: 0/100
+2026-03-09 23:51:26,987  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-09 23:51:26,990  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-09 23:51:27,021  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260309T235125.csv
+2026-03-09 23:51:27,050  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-09 23:51:27,078  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-09 23:51:27,105  INFO      processor  Processing complete -- raw/sensors_20260309T235125.csv | anomalies: 6/100 (6.0%)
+2026-03-09 23:52:27,167  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260309T235225.csv -- queuing for processing
+2026-03-09 23:52:27,169  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260309T235225.csv
+2026-03-09 23:52:27,244  INFO      processor  Loaded 100 rows from raw/sensors_20260309T235225.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 23:52:27,355  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-09 23:52:27,356  INFO      baseline  Baseline updated -- channel: temperature | observations: 100 -> 200 | mean: 21.7977 | std: 2.1571
+2026-03-09 23:52:27,356  INFO      baseline  Baseline updated -- channel: humidity | observations: 100 -> 200 | mean: 55.1196 | std: 5.2080
+2026-03-09 23:52:27,357  INFO      baseline  Baseline updated -- channel: pressure | observations: 100 -> 200 | mean: 1012.5279 | std: 4.8461
+2026-03-09 23:52:27,357  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 100 -> 200 | mean: 10.0505 | std: 2.6431
+2026-03-09 23:52:27,359  INFO      detector  Z-score check -- channel: temperature | flagged: 0/100
+2026-03-09 23:52:27,360  INFO      detector  Z-score check -- channel: humidity | flagged: 0/100
+2026-03-09 23:52:27,361  INFO      detector  Z-score check -- channel: pressure | flagged: 4/100
+2026-03-09 23:52:27,362  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-09 23:52:27,516  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-09 23:52:27,519  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-09 23:52:27,569  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260309T235225.csv
+2026-03-09 23:52:27,603  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-09 23:52:27,632  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-09 23:52:27,662  INFO      processor  Processing complete -- raw/sensors_20260309T235225.csv | anomalies: 6/100 (6.0%)
+2026-03-09 23:53:26,741  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260309T235325.csv -- queuing for processing
+2026-03-09 23:53:26,742  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260309T235325.csv
+2026-03-09 23:53:26,816  INFO      processor  Loaded 100 rows from raw/sensors_20260309T235325.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 23:53:26,892  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-09 23:53:26,892  INFO      baseline  Baseline updated -- channel: temperature | observations: 200 -> 300 | mean: 21.8547 | std: 1.9538
+2026-03-09 23:53:26,893  INFO      baseline  Baseline updated -- channel: humidity | observations: 200 -> 300 | mean: 54.7902 | std: 5.8553
+2026-03-09 23:53:26,893  INFO      baseline  Baseline updated -- channel: pressure | observations: 200 -> 300 | mean: 1012.5119 | std: 4.6117
+2026-03-09 23:53:26,893  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 200 -> 300 | mean: 10.0853 | std: 2.7696
+2026-03-09 23:53:26,895  INFO      detector  Z-score check -- channel: temperature | flagged: 0/100
+2026-03-09 23:53:26,896  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-09 23:53:26,897  INFO      detector  Z-score check -- channel: pressure | flagged: 2/100
+2026-03-09 23:53:26,898  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-09 23:53:27,056  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-09 23:53:27,059  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-09 23:53:27,091  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260309T235325.csv
+2026-03-09 23:53:27,119  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-09 23:53:27,145  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-09 23:53:27,177  INFO      processor  Processing complete -- raw/sensors_20260309T235325.csv | anomalies: 5/100 (5.0%)
+2026-03-09 23:54:27,181  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260309T235426.csv -- queuing for processing
+2026-03-09 23:54:27,182  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260309T235426.csv
+2026-03-09 23:54:27,250  INFO      processor  Loaded 100 rows from raw/sensors_20260309T235426.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 23:54:27,328  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-09 23:54:27,329  INFO      baseline  Baseline updated -- channel: temperature | observations: 300 -> 400 | mean: 21.9590 | std: 1.8853
+2026-03-09 23:54:27,329  INFO      baseline  Baseline updated -- channel: humidity | observations: 300 -> 400 | mean: 54.8066 | std: 6.2469
+2026-03-09 23:54:27,330  INFO      baseline  Baseline updated -- channel: pressure | observations: 300 -> 400 | mean: 1012.6367 | std: 4.2744
+2026-03-09 23:54:27,330  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 300 -> 400 | mean: 10.1451 | std: 2.7925
+2026-03-09 23:54:27,331  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-09 23:54:27,332  INFO      detector  Z-score check -- channel: humidity | flagged: 3/100
+2026-03-09 23:54:27,333  INFO      detector  Z-score check -- channel: pressure | flagged: 0/100
+2026-03-09 23:54:27,334  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-09 23:54:27,487  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-09 23:54:27,490  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-09 23:54:27,520  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260309T235426.csv
+2026-03-09 23:54:27,547  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-09 23:54:27,575  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-09 23:54:27,603  INFO      processor  Processing complete -- raw/sensors_20260309T235426.csv | anomalies: 6/100 (6.0%)
+2026-03-09 23:55:27,749  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260309T235526.csv -- queuing for processing
+2026-03-09 23:55:27,751  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260309T235526.csv
+2026-03-09 23:55:27,827  INFO      processor  Loaded 100 rows from raw/sensors_20260309T235526.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 23:55:27,893  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-09 23:55:27,894  INFO      baseline  Baseline updated -- channel: temperature | observations: 400 -> 500 | mean: 21.9273 | std: 1.8866
+2026-03-09 23:55:27,894  INFO      baseline  Baseline updated -- channel: humidity | observations: 400 -> 500 | mean: 54.9791 | std: 6.2217
+2026-03-09 23:55:27,895  INFO      baseline  Baseline updated -- channel: pressure | observations: 400 -> 500 | mean: 1012.8187 | std: 4.1245
+2026-03-09 23:55:27,895  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 400 -> 500 | mean: 10.1273 | std: 2.8518
+2026-03-09 23:55:27,896  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-09 23:55:27,897  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-09 23:55:27,898  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-09 23:55:27,899  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-09 23:55:28,054  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-09 23:55:28,057  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-09 23:55:28,087  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260309T235526.csv
+2026-03-09 23:55:28,128  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-09 23:55:28,158  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-09 23:55:28,183  INFO      processor  Processing complete -- raw/sensors_20260309T235526.csv | anomalies: 5/100 (5.0%)
+2026-03-09 23:56:27,461  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260309T235626.csv -- queuing for processing
+2026-03-09 23:56:27,462  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260309T235626.csv
+2026-03-09 23:56:27,535  INFO      processor  Loaded 100 rows from raw/sensors_20260309T235626.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 23:56:27,617  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-09 23:56:27,618  INFO      baseline  Baseline updated -- channel: temperature | observations: 500 -> 600 | mean: 21.9580 | std: 2.1179
+2026-03-09 23:56:27,618  INFO      baseline  Baseline updated -- channel: humidity | observations: 500 -> 600 | mean: 54.9648 | std: 6.0059
+2026-03-09 23:56:27,619  INFO      baseline  Baseline updated -- channel: pressure | observations: 500 -> 600 | mean: 1012.8126 | std: 3.9753
+2026-03-09 23:56:27,619  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 500 -> 600 | mean: 10.0619 | std: 2.7955
+2026-03-09 23:56:27,620  INFO      detector  Z-score check -- channel: temperature | flagged: 4/100
+2026-03-09 23:56:27,621  INFO      detector  Z-score check -- channel: humidity | flagged: 0/100
+2026-03-09 23:56:27,623  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-09 23:56:27,624  INFO      detector  Z-score check -- channel: wind_speed | flagged: 0/100
+2026-03-09 23:56:27,779  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-09 23:56:27,782  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-09 23:56:27,814  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260309T235626.csv
+2026-03-09 23:56:27,871  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-09 23:56:27,896  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-09 23:56:27,924  INFO      processor  Processing complete -- raw/sensors_20260309T235626.csv | anomalies: 6/100 (6.0%)
+2026-03-09 23:57:27,702  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260309T235726.csv -- queuing for processing
+2026-03-09 23:57:27,704  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260309T235726.csv
+2026-03-09 23:57:27,782  INFO      processor  Loaded 100 rows from raw/sensors_20260309T235726.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 23:57:27,872  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-09 23:57:27,873  INFO      baseline  Baseline updated -- channel: temperature | observations: 600 -> 700 | mean: 21.9354 | std: 2.0962
+2026-03-09 23:57:27,873  INFO      baseline  Baseline updated -- channel: humidity | observations: 600 -> 700 | mean: 54.9656 | std: 6.1174
+2026-03-09 23:57:27,873  INFO      baseline  Baseline updated -- channel: pressure | observations: 600 -> 700 | mean: 1012.8885 | std: 3.8560
+2026-03-09 23:57:27,874  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 600 -> 700 | mean: 10.0717 | std: 2.8422
+2026-03-09 23:57:27,875  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-09 23:57:27,876  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-09 23:57:27,877  INFO      detector  Z-score check -- channel: pressure | flagged: 0/100
+2026-03-09 23:57:27,878  INFO      detector  Z-score check -- channel: wind_speed | flagged: 2/100
+2026-03-09 23:57:28,032  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-09 23:57:28,035  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-09 23:57:28,067  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260309T235726.csv
+2026-03-09 23:57:28,096  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-09 23:57:28,125  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-09 23:57:28,148  INFO      processor  Processing complete -- raw/sensors_20260309T235726.csv | anomalies: 5/100 (5.0%)
+2026-03-09 23:58:28,151  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260309T235826.csv -- queuing for processing
+2026-03-09 23:58:28,153  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260309T235826.csv
+2026-03-09 23:58:28,228  INFO      processor  Loaded 100 rows from raw/sensors_20260309T235826.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 23:58:28,333  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-09 23:58:28,334  INFO      baseline  Baseline updated -- channel: temperature | observations: 700 -> 800 | mean: 21.9238 | std: 2.1339
+2026-03-09 23:58:28,334  INFO      baseline  Baseline updated -- channel: humidity | observations: 700 -> 800 | mean: 54.8985 | std: 6.2564
+2026-03-09 23:58:28,334  INFO      baseline  Baseline updated -- channel: pressure | observations: 700 -> 800 | mean: 1012.8941 | std: 3.8364
+2026-03-09 23:58:28,335  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 700 -> 800 | mean: 10.0798 | std: 2.8287
+2026-03-09 23:58:28,336  INFO      detector  Z-score check -- channel: temperature | flagged: 2/100
+2026-03-09 23:58:28,337  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-09 23:58:28,338  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-09 23:58:28,339  INFO      detector  Z-score check -- channel: wind_speed | flagged: 0/100
+2026-03-09 23:58:28,495  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-09 23:58:28,498  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-09 23:58:28,538  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260309T235826.csv
+2026-03-09 23:58:28,562  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-09 23:58:28,592  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-09 23:58:28,615  INFO      processor  Processing complete -- raw/sensors_20260309T235826.csv | anomalies: 6/100 (6.0%)
+2026-03-09 23:59:27,872  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260309T235927.csv -- queuing for processing
+2026-03-09 23:59:27,873  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260309T235927.csv
+2026-03-09 23:59:27,946  INFO      processor  Loaded 100 rows from raw/sensors_20260309T235927.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 23:59:28,018  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-09 23:59:28,019  INFO      baseline  Baseline updated -- channel: temperature | observations: 800 -> 900 | mean: 21.9727 | std: 2.2437
+2026-03-09 23:59:28,019  INFO      baseline  Baseline updated -- channel: humidity | observations: 800 -> 900 | mean: 54.8108 | std: 6.3069
+2026-03-09 23:59:28,020  INFO      baseline  Baseline updated -- channel: pressure | observations: 800 -> 900 | mean: 1012.9368 | std: 3.8069
+2026-03-09 23:59:28,020  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 800 -> 900 | mean: 10.0480 | std: 2.8269
+2026-03-09 23:59:28,021  INFO      detector  Z-score check -- channel: temperature | flagged: 3/100
+2026-03-09 23:59:28,022  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-09 23:59:28,023  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-09 23:59:28,024  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-09 23:59:28,178  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-09 23:59:28,181  INFO      detector  Detection complete -- total anomalies flagged: 7/100
+2026-03-09 23:59:28,211  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260309T235927.csv
+2026-03-09 23:59:28,239  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-09 23:59:28,265  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-09 23:59:28,317  INFO      processor  Processing complete -- raw/sensors_20260309T235927.csv | anomalies: 7/100 (7.0%)
+2026-03-10 00:00:28,417  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000027.csv -- queuing for processing
+2026-03-10 00:00:28,419  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000027.csv
+2026-03-10 00:00:28,493  INFO      processor  Loaded 100 rows from raw/sensors_20260310T000027.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:00:28,563  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:00:28,563  INFO      baseline  Baseline updated -- channel: temperature | observations: 900 -> 1000 | mean: 21.9551 | std: 2.1836
+2026-03-10 00:00:28,564  INFO      baseline  Baseline updated -- channel: humidity | observations: 900 -> 1000 | mean: 54.8195 | std: 6.1784
+2026-03-10 00:00:28,564  INFO      baseline  Baseline updated -- channel: pressure | observations: 900 -> 1000 | mean: 1012.8921 | std: 3.8167
+2026-03-10 00:00:28,564  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 900 -> 1000 | mean: 10.0345 | std: 2.9087
+2026-03-10 00:00:28,566  INFO      detector  Z-score check -- channel: temperature | flagged: 0/100
+2026-03-10 00:00:28,567  INFO      detector  Z-score check -- channel: humidity | flagged: 0/100
+2026-03-10 00:00:28,568  INFO      detector  Z-score check -- channel: pressure | flagged: 2/100
+2026-03-10 00:00:28,569  INFO      detector  Z-score check -- channel: wind_speed | flagged: 3/100
+2026-03-10 00:00:28,724  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:00:28,727  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:00:28,762  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T000027.csv
+2026-03-10 00:00:28,792  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:00:28,856  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:00:28,893  INFO      processor  Processing complete -- raw/sensors_20260310T000027.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:01:28,737  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000127.csv -- queuing for processing
+2026-03-10 00:01:28,738  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000127.csv
+2026-03-10 00:01:28,813  INFO      processor  Loaded 100 rows from raw/sensors_20260310T000127.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:01:28,889  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:01:28,890  INFO      baseline  Baseline updated -- channel: temperature | observations: 1000 -> 1100 | mean: 21.9798 | std: 2.2035
+2026-03-10 00:01:28,890  INFO      baseline  Baseline updated -- channel: humidity | observations: 1000 -> 1100 | mean: 54.8476 | std: 6.2234
+2026-03-10 00:01:28,891  INFO      baseline  Baseline updated -- channel: pressure | observations: 1000 -> 1100 | mean: 1012.9609 | std: 3.7262
+2026-03-10 00:01:28,891  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 1000 -> 1100 | mean: 10.0001 | std: 2.9759
+2026-03-10 00:01:28,893  INFO      detector  Z-score check -- channel: temperature | flagged: 3/100
+2026-03-10 00:01:28,894  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:01:28,895  INFO      detector  Z-score check -- channel: pressure | flagged: 0/100
+2026-03-10 00:01:28,896  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:01:29,049  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:01:29,052  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:01:29,082  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T000127.csv
+2026-03-10 00:01:29,111  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:01:29,138  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:01:29,167  INFO      processor  Processing complete -- raw/sensors_20260310T000127.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:02:28,408  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000227.csv -- queuing for processing
+2026-03-10 00:02:28,410  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000227.csv
+2026-03-10 00:02:28,489  INFO      processor  Loaded 100 rows from raw/sensors_20260310T000227.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:02:28,603  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:02:28,603  INFO      baseline  Baseline updated -- channel: temperature | observations: 1100 -> 1200 | mean: 21.9747 | std: 2.1940
+2026-03-10 00:02:28,604  INFO      baseline  Baseline updated -- channel: humidity | observations: 1100 -> 1200 | mean: 54.9085 | std: 6.3405
+2026-03-10 00:02:28,604  INFO      baseline  Baseline updated -- channel: pressure | observations: 1100 -> 1200 | mean: 1012.9252 | std: 3.6601
+2026-03-10 00:02:28,605  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 1100 -> 1200 | mean: 9.9806 | std: 2.9863
+2026-03-10 00:02:28,606  INFO      detector  Z-score check -- channel: temperature | flagged: 2/100
+2026-03-10 00:02:28,607  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-10 00:02:28,608  INFO      detector  Z-score check -- channel: pressure | flagged: 0/100
+2026-03-10 00:02:28,609  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:02:28,763  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:02:28,766  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:02:28,797  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T000227.csv
+2026-03-10 00:02:28,825  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:02:28,856  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:02:28,883  INFO      processor  Processing complete -- raw/sensors_20260310T000227.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:03:28,921  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000327.csv -- queuing for processing
+2026-03-10 00:03:28,923  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000327.csv
+2026-03-10 00:03:28,999  INFO      processor  Loaded 100 rows from raw/sensors_20260310T000327.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:03:29,085  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:03:29,086  INFO      baseline  Baseline updated -- channel: temperature | observations: 1200 -> 1300 | mean: 21.9649 | std: 2.1442
+2026-03-10 00:03:29,087  INFO      baseline  Baseline updated -- channel: humidity | observations: 1200 -> 1300 | mean: 54.9290 | std: 6.3695
+2026-03-10 00:03:29,087  INFO      baseline  Baseline updated -- channel: pressure | observations: 1200 -> 1300 | mean: 1012.8784 | std: 3.6592
+2026-03-10 00:03:29,088  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 1200 -> 1300 | mean: 9.9922 | std: 2.9657
+2026-03-10 00:03:29,089  INFO      detector  Z-score check -- channel: temperature | flagged: 0/100
+2026-03-10 00:03:29,090  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-10 00:03:29,091  INFO      detector  Z-score check -- channel: pressure | flagged: 2/100
+2026-03-10 00:03:29,092  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:03:29,245  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:03:29,248  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:03:29,283  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T000327.csv
+2026-03-10 00:03:29,311  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:03:29,343  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:03:29,381  INFO      processor  Processing complete -- raw/sensors_20260310T000327.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:04:29,242  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000428.csv -- queuing for processing
+2026-03-10 00:04:29,243  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000428.csv
+2026-03-10 00:04:29,327  INFO      processor  Loaded 100 rows from raw/sensors_20260310T000428.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:04:29,408  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:04:29,409  INFO      baseline  Baseline updated -- channel: temperature | observations: 1300 -> 1400 | mean: 21.9297 | std: 2.2395
+2026-03-10 00:04:29,409  INFO      baseline  Baseline updated -- channel: humidity | observations: 1300 -> 1400 | mean: 54.9612 | std: 6.2949
+2026-03-10 00:04:29,410  INFO      baseline  Baseline updated -- channel: pressure | observations: 1300 -> 1400 | mean: 1012.9066 | std: 3.6067
+2026-03-10 00:04:29,410  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 1300 -> 1400 | mean: 9.9869 | std: 2.9797
+2026-03-10 00:04:29,412  INFO      detector  Z-score check -- channel: temperature | flagged: 4/100
+2026-03-10 00:04:29,413  INFO      detector  Z-score check -- channel: humidity | flagged: 0/100
+2026-03-10 00:04:29,414  INFO      detector  Z-score check -- channel: pressure | flagged: 0/100
+2026-03-10 00:04:29,415  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:04:29,568  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:04:29,571  INFO      detector  Detection complete -- total anomalies flagged: 7/100
+2026-03-10 00:04:29,612  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T000428.csv
+2026-03-10 00:04:29,635  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:04:29,670  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:04:29,698  INFO      processor  Processing complete -- raw/sensors_20260310T000428.csv | anomalies: 7/100 (7.0%)
+2026-03-10 00:05:29,707  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000528.csv -- queuing for processing
+2026-03-10 00:05:29,708  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000528.csv
+2026-03-10 00:05:29,781  INFO      processor  Loaded 100 rows from raw/sensors_20260310T000528.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:05:29,852  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:05:29,852  INFO      baseline  Baseline updated -- channel: temperature | observations: 1400 -> 1500 | mean: 21.9150 | std: 2.1974
+2026-03-10 00:05:29,853  INFO      baseline  Baseline updated -- channel: humidity | observations: 1400 -> 1500 | mean: 54.9624 | std: 6.2958
+2026-03-10 00:05:29,853  INFO      baseline  Baseline updated -- channel: pressure | observations: 1400 -> 1500 | mean: 1012.9399 | std: 3.5776
+2026-03-10 00:05:29,853  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 1400 -> 1500 | mean: 9.9870 | std: 3.0441
+2026-03-10 00:05:29,854  INFO      detector  Z-score check -- channel: temperature | flagged: 0/100
+2026-03-10 00:05:29,856  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-10 00:05:29,856  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:05:29,857  INFO      detector  Z-score check -- channel: wind_speed | flagged: 3/100
+2026-03-10 00:05:30,012  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:05:30,015  INFO      detector  Detection complete -- total anomalies flagged: 8/100
+2026-03-10 00:05:30,043  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T000528.csv
+2026-03-10 00:05:30,067  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:05:30,095  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:05:30,119  INFO      processor  Processing complete -- raw/sensors_20260310T000528.csv | anomalies: 8/100 (8.0%)
+2026-03-10 00:06:29,561  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000628.csv -- queuing for processing
+2026-03-10 00:06:29,562  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000628.csv
+2026-03-10 00:06:29,637  INFO      processor  Loaded 100 rows from raw/sensors_20260310T000628.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:06:29,708  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:06:29,709  INFO      baseline  Baseline updated -- channel: temperature | observations: 1500 -> 1600 | mean: 21.9312 | std: 2.1946
+2026-03-10 00:06:29,709  INFO      baseline  Baseline updated -- channel: humidity | observations: 1500 -> 1600 | mean: 55.0470 | std: 6.2835
+2026-03-10 00:06:29,709  INFO      baseline  Baseline updated -- channel: pressure | observations: 1500 -> 1600 | mean: 1012.9262 | std: 3.5672
+2026-03-10 00:06:29,710  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 1500 -> 1600 | mean: 10.0130 | std: 3.0323
+2026-03-10 00:06:29,711  INFO      detector  Z-score check -- channel: temperature | flagged: 2/100
+2026-03-10 00:06:29,712  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:06:29,713  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:06:29,714  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:06:29,872  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:06:29,874  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:06:29,906  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T000628.csv
+2026-03-10 00:06:29,930  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:06:29,961  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:06:29,989  INFO      processor  Processing complete -- raw/sensors_20260310T000628.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:07:29,910  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000728.csv -- queuing for processing
+2026-03-10 00:07:29,912  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000728.csv
+2026-03-10 00:07:30,039  INFO      processor  Loaded 100 rows from raw/sensors_20260310T000728.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:07:30,264  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:07:30,264  INFO      baseline  Baseline updated -- channel: temperature | observations: 1600 -> 1700 | mean: 21.9441 | std: 2.1844
+2026-03-10 00:07:30,265  INFO      baseline  Baseline updated -- channel: humidity | observations: 1600 -> 1700 | mean: 55.0433 | std: 6.1940
+2026-03-10 00:07:30,265  INFO      baseline  Baseline updated -- channel: pressure | observations: 1600 -> 1700 | mean: 1012.8871 | std: 3.6598
+2026-03-10 00:07:30,265  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 1600 -> 1700 | mean: 10.0082 | std: 3.0078
+2026-03-10 00:07:30,267  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-10 00:07:30,268  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:07:30,269  INFO      detector  Z-score check -- channel: pressure | flagged: 3/100
+2026-03-10 00:07:30,270  INFO      detector  Z-score check -- channel: wind_speed | flagged: 0/100
+2026-03-10 00:07:30,431  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:07:30,434  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:07:30,505  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T000728.csv
+2026-03-10 00:07:30,538  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:07:30,595  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:07:30,643  INFO      processor  Processing complete -- raw/sensors_20260310T000728.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:08:30,207  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000829.csv -- queuing for processing
+2026-03-10 00:08:30,208  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000829.csv
+2026-03-10 00:08:30,286  INFO      processor  Loaded 100 rows from raw/sensors_20260310T000829.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:08:30,376  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:08:30,376  INFO      baseline  Baseline updated -- channel: temperature | observations: 1700 -> 1800 | mean: 21.9322 | std: 2.1917
+2026-03-10 00:08:30,377  INFO      baseline  Baseline updated -- channel: humidity | observations: 1700 -> 1800 | mean: 54.9679 | std: 6.1335
+2026-03-10 00:08:30,377  INFO      baseline  Baseline updated -- channel: pressure | observations: 1700 -> 1800 | mean: 1012.8918 | std: 3.6494
+2026-03-10 00:08:30,377  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 1700 -> 1800 | mean: 10.0249 | std: 3.0031
+2026-03-10 00:08:30,379  INFO      detector  Z-score check -- channel: temperature | flagged: 3/100
+2026-03-10 00:08:30,380  INFO      detector  Z-score check -- channel: humidity | flagged: 0/100
+2026-03-10 00:08:30,381  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:08:30,382  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:08:30,536  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:08:30,539  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:08:30,571  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T000829.csv
+2026-03-10 00:08:30,600  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:08:30,693  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:08:30,720  INFO      processor  Processing complete -- raw/sensors_20260310T000829.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:09:30,697  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000929.csv -- queuing for processing
+2026-03-10 00:09:30,698  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T000929.csv
+2026-03-10 00:09:30,778  INFO      processor  Loaded 100 rows from raw/sensors_20260310T000929.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:09:30,858  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:09:30,858  INFO      baseline  Baseline updated -- channel: temperature | observations: 1800 -> 1900 | mean: 21.9222 | std: 2.1635
+2026-03-10 00:09:30,859  INFO      baseline  Baseline updated -- channel: humidity | observations: 1800 -> 1900 | mean: 54.9255 | std: 6.1913
+2026-03-10 00:09:30,859  INFO      baseline  Baseline updated -- channel: pressure | observations: 1800 -> 1900 | mean: 1012.9534 | std: 3.7372
+2026-03-10 00:09:30,859  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 1800 -> 1900 | mean: 10.0307 | std: 2.9606
+2026-03-10 00:09:30,861  INFO      detector  Z-score check -- channel: temperature | flagged: 0/100
+2026-03-10 00:09:30,862  INFO      detector  Z-score check -- channel: humidity | flagged: 3/100
+2026-03-10 00:09:30,863  INFO      detector  Z-score check -- channel: pressure | flagged: 2/100
+2026-03-10 00:09:30,864  INFO      detector  Z-score check -- channel: wind_speed | flagged: 0/100
+2026-03-10 00:09:31,018  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:09:31,021  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:09:31,049  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T000929.csv
+2026-03-10 00:09:31,078  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:09:31,168  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:09:31,196  INFO      processor  Processing complete -- raw/sensors_20260310T000929.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:10:30,425  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001029.csv -- queuing for processing
+2026-03-10 00:10:30,427  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001029.csv
+2026-03-10 00:10:30,495  INFO      processor  Loaded 100 rows from raw/sensors_20260310T001029.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:10:30,593  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:10:30,594  INFO      baseline  Baseline updated -- channel: temperature | observations: 1900 -> 2000 | mean: 21.9147 | std: 2.1580
+2026-03-10 00:10:30,595  INFO      baseline  Baseline updated -- channel: humidity | observations: 1900 -> 2000 | mean: 54.9501 | std: 6.1338
+2026-03-10 00:10:30,595  INFO      baseline  Baseline updated -- channel: pressure | observations: 1900 -> 2000 | mean: 1012.9612 | std: 3.7695
+2026-03-10 00:10:30,595  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 1900 -> 2000 | mean: 10.0296 | std: 2.9677
+2026-03-10 00:10:30,597  INFO      detector  Z-score check -- channel: temperature | flagged: 2/100
+2026-03-10 00:10:30,598  INFO      detector  Z-score check -- channel: humidity | flagged: 0/100
+2026-03-10 00:10:30,599  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:10:30,600  INFO      detector  Z-score check -- channel: wind_speed | flagged: 2/100
+2026-03-10 00:10:30,754  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:10:30,757  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:10:30,789  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T001029.csv
+2026-03-10 00:10:30,823  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:10:30,857  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:10:30,891  INFO      processor  Processing complete -- raw/sensors_20260310T001029.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:11:30,841  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001129.csv -- queuing for processing
+2026-03-10 00:11:30,842  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001129.csv
+2026-03-10 00:11:30,949  INFO      processor  Loaded 100 rows from raw/sensors_20260310T001129.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:11:31,021  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:11:31,021  INFO      baseline  Baseline updated -- channel: temperature | observations: 2000 -> 2100 | mean: 21.9177 | std: 2.1347
+2026-03-10 00:11:31,022  INFO      baseline  Baseline updated -- channel: humidity | observations: 2000 -> 2100 | mean: 54.9410 | std: 6.1253
+2026-03-10 00:11:31,022  INFO      baseline  Baseline updated -- channel: pressure | observations: 2000 -> 2100 | mean: 1012.9937 | std: 3.8142
+2026-03-10 00:11:31,023  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 2000 -> 2100 | mean: 10.0387 | std: 2.9561
+2026-03-10 00:11:31,024  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-10 00:11:31,025  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:11:31,026  INFO      detector  Z-score check -- channel: pressure | flagged: 2/100
+2026-03-10 00:11:31,027  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:11:31,182  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:11:31,185  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:11:31,217  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T001129.csv
+2026-03-10 00:11:31,256  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:11:31,310  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:11:31,342  INFO      processor  Processing complete -- raw/sensors_20260310T001129.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:12:31,172  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001229.csv -- queuing for processing
+2026-03-10 00:12:31,173  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001229.csv
+2026-03-10 00:12:31,247  INFO      processor  Loaded 100 rows from raw/sensors_20260310T001229.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:12:31,321  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:12:31,321  INFO      baseline  Baseline updated -- channel: temperature | observations: 2100 -> 2200 | mean: 21.9087 | std: 2.1291
+2026-03-10 00:12:31,322  INFO      baseline  Baseline updated -- channel: humidity | observations: 2100 -> 2200 | mean: 54.9536 | std: 6.0879
+2026-03-10 00:12:31,322  INFO      baseline  Baseline updated -- channel: pressure | observations: 2100 -> 2200 | mean: 1013.0172 | std: 3.8213
+2026-03-10 00:12:31,322  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 2100 -> 2200 | mean: 10.0452 | std: 2.9802
+2026-03-10 00:12:31,324  INFO      detector  Z-score check -- channel: temperature | flagged: 2/100
+2026-03-10 00:12:31,325  INFO      detector  Z-score check -- channel: humidity | flagged: 0/100
+2026-03-10 00:12:31,326  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:12:31,327  INFO      detector  Z-score check -- channel: wind_speed | flagged: 2/100
+2026-03-10 00:12:31,480  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:12:31,483  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:12:31,512  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T001229.csv
+2026-03-10 00:12:31,547  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:12:31,574  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:12:31,603  INFO      processor  Processing complete -- raw/sensors_20260310T001229.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:13:30,856  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001330.csv -- queuing for processing
+2026-03-10 00:13:30,858  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001330.csv
+2026-03-10 00:13:30,944  INFO      processor  Loaded 100 rows from raw/sensors_20260310T001330.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:13:31,024  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:13:31,024  INFO      baseline  Baseline updated -- channel: temperature | observations: 2200 -> 2300 | mean: 21.9316 | std: 2.1249
+2026-03-10 00:13:31,025  INFO      baseline  Baseline updated -- channel: humidity | observations: 2200 -> 2300 | mean: 54.9852 | std: 6.0781
+2026-03-10 00:13:31,025  INFO      baseline  Baseline updated -- channel: pressure | observations: 2200 -> 2300 | mean: 1013.0051 | std: 3.8092
+2026-03-10 00:13:31,025  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 2200 -> 2300 | mean: 10.0500 | std: 2.9602
+2026-03-10 00:13:31,027  INFO      detector  Z-score check -- channel: temperature | flagged: 2/100
+2026-03-10 00:13:31,028  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-10 00:13:31,029  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:13:31,030  INFO      detector  Z-score check -- channel: wind_speed | flagged: 0/100
+2026-03-10 00:13:31,184  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:13:31,187  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:13:31,237  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T001330.csv
+2026-03-10 00:13:31,272  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:13:31,301  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:13:31,328  INFO      processor  Processing complete -- raw/sensors_20260310T001330.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:14:31,305  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001430.csv -- queuing for processing
+2026-03-10 00:14:31,306  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001430.csv
+2026-03-10 00:14:31,380  INFO      processor  Loaded 100 rows from raw/sensors_20260310T001430.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:14:31,452  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:14:31,452  INFO      baseline  Baseline updated -- channel: temperature | observations: 2300 -> 2400 | mean: 21.9420 | std: 2.1160
+2026-03-10 00:14:31,453  INFO      baseline  Baseline updated -- channel: humidity | observations: 2300 -> 2400 | mean: 54.9928 | std: 6.0394
+2026-03-10 00:14:31,453  INFO      baseline  Baseline updated -- channel: pressure | observations: 2300 -> 2400 | mean: 1013.0216 | std: 3.8655
+2026-03-10 00:14:31,454  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 2300 -> 2400 | mean: 10.0566 | std: 2.9558
+2026-03-10 00:14:31,455  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-10 00:14:31,456  INFO      detector  Z-score check -- channel: humidity | flagged: 0/100
+2026-03-10 00:14:31,457  INFO      detector  Z-score check -- channel: pressure | flagged: 3/100
+2026-03-10 00:14:31,458  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:14:31,611  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:14:31,614  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:14:31,644  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T001430.csv
+2026-03-10 00:14:31,669  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:14:31,701  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:14:31,732  INFO      processor  Processing complete -- raw/sensors_20260310T001430.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:15:31,840  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001530.csv -- queuing for processing
+2026-03-10 00:15:31,842  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001530.csv
+2026-03-10 00:15:31,945  INFO      processor  Loaded 100 rows from raw/sensors_20260310T001530.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:15:32,023  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:15:32,024  INFO      baseline  Baseline updated -- channel: temperature | observations: 2400 -> 2500 | mean: 21.9394 | std: 2.1093
+2026-03-10 00:15:32,024  INFO      baseline  Baseline updated -- channel: humidity | observations: 2400 -> 2500 | mean: 55.0093 | std: 6.0633
+2026-03-10 00:15:32,025  INFO      baseline  Baseline updated -- channel: pressure | observations: 2400 -> 2500 | mean: 1013.0287 | std: 3.8621
+2026-03-10 00:15:32,025  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 2400 -> 2500 | mean: 10.0526 | std: 2.9689
+2026-03-10 00:15:32,027  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-10 00:15:32,028  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:15:32,029  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:15:32,030  INFO      detector  Z-score check -- channel: wind_speed | flagged: 2/100
+2026-03-10 00:15:32,182  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:15:32,185  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:15:32,237  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T001530.csv
+2026-03-10 00:15:32,270  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:15:32,324  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:15:32,371  INFO      processor  Processing complete -- raw/sensors_20260310T001530.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:16:32,110  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001630.csv -- queuing for processing
+2026-03-10 00:16:32,112  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001630.csv
+2026-03-10 00:16:32,186  INFO      processor  Loaded 100 rows from raw/sensors_20260310T001630.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:16:32,257  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:16:32,258  INFO      baseline  Baseline updated -- channel: temperature | observations: 2500 -> 2600 | mean: 21.9466 | std: 2.0906
+2026-03-10 00:16:32,258  INFO      baseline  Baseline updated -- channel: humidity | observations: 2500 -> 2600 | mean: 55.0143 | std: 6.1220
+2026-03-10 00:16:32,258  INFO      baseline  Baseline updated -- channel: pressure | observations: 2500 -> 2600 | mean: 1013.0153 | std: 3.8220
+2026-03-10 00:16:32,259  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 2500 -> 2600 | mean: 10.0717 | std: 2.9944
+2026-03-10 00:16:32,260  INFO      detector  Z-score check -- channel: temperature | flagged: 0/100
+2026-03-10 00:16:32,261  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-10 00:16:32,262  INFO      detector  Z-score check -- channel: pressure | flagged: 0/100
+2026-03-10 00:16:32,263  INFO      detector  Z-score check -- channel: wind_speed | flagged: 3/100
+2026-03-10 00:16:32,416  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:16:32,419  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:16:32,474  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T001630.csv
+2026-03-10 00:16:32,537  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:16:32,569  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:16:32,604  INFO      processor  Processing complete -- raw/sensors_20260310T001630.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:17:31,798  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001730.csv -- queuing for processing
+2026-03-10 00:17:31,799  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001730.csv
+2026-03-10 00:17:31,869  INFO      processor  Loaded 100 rows from raw/sensors_20260310T001730.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:17:31,945  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:17:31,946  INFO      baseline  Baseline updated -- channel: temperature | observations: 2600 -> 2700 | mean: 21.9421 | std: 2.0722
+2026-03-10 00:17:31,946  INFO      baseline  Baseline updated -- channel: humidity | observations: 2600 -> 2700 | mean: 54.9733 | std: 6.1132
+2026-03-10 00:17:31,947  INFO      baseline  Baseline updated -- channel: pressure | observations: 2600 -> 2700 | mean: 1012.9901 | std: 3.8611
+2026-03-10 00:17:31,947  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 2600 -> 2700 | mean: 10.0660 | std: 3.0327
+2026-03-10 00:17:31,948  INFO      detector  Z-score check -- channel: temperature | flagged: 0/100
+2026-03-10 00:17:31,949  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:17:31,950  INFO      detector  Z-score check -- channel: pressure | flagged: 2/100
+2026-03-10 00:17:31,951  INFO      detector  Z-score check -- channel: wind_speed | flagged: 2/100
+2026-03-10 00:17:32,110  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:17:32,113  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:17:32,143  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T001730.csv
+2026-03-10 00:17:32,175  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:17:32,203  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:17:32,225  INFO      processor  Processing complete -- raw/sensors_20260310T001730.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:18:32,256  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001831.csv -- queuing for processing
+2026-03-10 00:18:32,258  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001831.csv
+2026-03-10 00:18:32,340  INFO      processor  Loaded 100 rows from raw/sensors_20260310T001831.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:18:32,413  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:18:32,414  INFO      baseline  Baseline updated -- channel: temperature | observations: 2700 -> 2800 | mean: 21.9437 | std: 2.0630
+2026-03-10 00:18:32,414  INFO      baseline  Baseline updated -- channel: humidity | observations: 2700 -> 2800 | mean: 54.9818 | std: 6.0700
+2026-03-10 00:18:32,415  INFO      baseline  Baseline updated -- channel: pressure | observations: 2700 -> 2800 | mean: 1012.9746 | std: 3.8557
+2026-03-10 00:18:32,415  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 2700 -> 2800 | mean: 10.0738 | std: 3.0909
+2026-03-10 00:18:32,416  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-10 00:18:32,417  INFO      detector  Z-score check -- channel: humidity | flagged: 0/100
+2026-03-10 00:18:32,418  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:18:32,419  INFO      detector  Z-score check -- channel: wind_speed | flagged: 3/100
+2026-03-10 00:18:32,573  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:18:32,576  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:18:32,640  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T001831.csv
+2026-03-10 00:18:32,671  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:18:32,705  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:18:32,754  INFO      processor  Processing complete -- raw/sensors_20260310T001831.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:19:32,559  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001931.csv -- queuing for processing
+2026-03-10 00:19:32,561  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T001931.csv
+2026-03-10 00:19:32,667  INFO      processor  Loaded 100 rows from raw/sensors_20260310T001931.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:19:32,751  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:19:32,752  INFO      baseline  Baseline updated -- channel: temperature | observations: 2800 -> 2900 | mean: 21.9415 | std: 2.0487
+2026-03-10 00:19:32,752  INFO      baseline  Baseline updated -- channel: humidity | observations: 2800 -> 2900 | mean: 54.9817 | std: 6.0967
+2026-03-10 00:19:32,753  INFO      baseline  Baseline updated -- channel: pressure | observations: 2800 -> 2900 | mean: 1012.9868 | std: 3.8872
+2026-03-10 00:19:32,753  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 2800 -> 2900 | mean: 10.0708 | std: 3.0722
+2026-03-10 00:19:32,754  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-10 00:19:32,755  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-10 00:19:32,756  INFO      detector  Z-score check -- channel: pressure | flagged: 2/100
+2026-03-10 00:19:32,757  INFO      detector  Z-score check -- channel: wind_speed | flagged: 0/100
+2026-03-10 00:19:32,916  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:19:32,919  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:19:32,956  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T001931.csv
+2026-03-10 00:19:32,995  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:19:33,029  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:19:33,097  INFO      processor  Processing complete -- raw/sensors_20260310T001931.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:20:32,989  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002031.csv -- queuing for processing
+2026-03-10 00:20:32,990  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002031.csv
+2026-03-10 00:20:33,080  INFO      processor  Loaded 100 rows from raw/sensors_20260310T002031.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:20:33,161  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:20:33,162  INFO      baseline  Baseline updated -- channel: temperature | observations: 2900 -> 3000 | mean: 21.9529 | std: 2.0473
+2026-03-10 00:20:33,162  INFO      baseline  Baseline updated -- channel: humidity | observations: 2900 -> 3000 | mean: 54.9910 | std: 6.0652
+2026-03-10 00:20:33,163  INFO      baseline  Baseline updated -- channel: pressure | observations: 2900 -> 3000 | mean: 1013.0026 | std: 3.8778
+2026-03-10 00:20:33,163  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 2900 -> 3000 | mean: 10.0676 | std: 3.0707
+2026-03-10 00:20:33,164  INFO      detector  Z-score check -- channel: temperature | flagged: 2/100
+2026-03-10 00:20:33,166  INFO      detector  Z-score check -- channel: humidity | flagged: 0/100
+2026-03-10 00:20:33,167  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:20:33,168  INFO      detector  Z-score check -- channel: wind_speed | flagged: 2/100
+2026-03-10 00:20:33,324  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:20:33,327  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:20:33,362  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T002031.csv
+2026-03-10 00:20:33,393  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:20:33,426  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:20:33,453  INFO      processor  Processing complete -- raw/sensors_20260310T002031.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:21:32,733  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002131.csv -- queuing for processing
+2026-03-10 00:21:32,735  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002131.csv
+2026-03-10 00:21:32,809  INFO      processor  Loaded 100 rows from raw/sensors_20260310T002131.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:21:32,904  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:21:32,904  INFO      baseline  Baseline updated -- channel: temperature | observations: 3000 -> 3100 | mean: 21.9510 | std: 2.0580
+2026-03-10 00:21:32,905  INFO      baseline  Baseline updated -- channel: humidity | observations: 3000 -> 3100 | mean: 54.9929 | std: 6.0265
+2026-03-10 00:21:32,905  INFO      baseline  Baseline updated -- channel: pressure | observations: 3000 -> 3100 | mean: 1013.0162 | std: 3.8883
+2026-03-10 00:21:32,906  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 3000 -> 3100 | mean: 10.0654 | std: 3.0637
+2026-03-10 00:21:32,907  INFO      detector  Z-score check -- channel: temperature | flagged: 3/100
+2026-03-10 00:21:32,908  INFO      detector  Z-score check -- channel: humidity | flagged: 0/100
+2026-03-10 00:21:32,909  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:21:32,910  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:21:33,064  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:21:33,067  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:21:33,140  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T002131.csv
+2026-03-10 00:21:33,165  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:21:33,201  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:21:33,230  INFO      processor  Processing complete -- raw/sensors_20260310T002131.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:22:33,113  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002232.csv -- queuing for processing
+2026-03-10 00:22:33,115  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002232.csv
+2026-03-10 00:22:33,189  INFO      processor  Loaded 100 rows from raw/sensors_20260310T002232.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:22:33,301  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:22:33,302  INFO      baseline  Baseline updated -- channel: temperature | observations: 3100 -> 3200 | mean: 21.9555 | std: 2.0776
+2026-03-10 00:22:33,302  INFO      baseline  Baseline updated -- channel: humidity | observations: 3100 -> 3200 | mean: 54.9580 | std: 6.0034
+2026-03-10 00:22:33,302  INFO      baseline  Baseline updated -- channel: pressure | observations: 3100 -> 3200 | mean: 1013.0123 | std: 3.8589
+2026-03-10 00:22:33,303  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 3100 -> 3200 | mean: 10.0661 | std: 3.0646
+2026-03-10 00:22:33,304  INFO      detector  Z-score check -- channel: temperature | flagged: 3/100
+2026-03-10 00:22:33,305  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:22:33,306  INFO      detector  Z-score check -- channel: pressure | flagged: 0/100
+2026-03-10 00:22:33,307  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:22:33,461  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:22:33,464  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:22:33,495  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T002232.csv
+2026-03-10 00:22:33,524  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:22:33,553  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:22:33,579  INFO      processor  Processing complete -- raw/sensors_20260310T002232.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:23:33,651  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002332.csv -- queuing for processing
+2026-03-10 00:23:33,652  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002332.csv
+2026-03-10 00:23:33,727  INFO      processor  Loaded 100 rows from raw/sensors_20260310T002332.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:23:33,803  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:23:33,804  INFO      baseline  Baseline updated -- channel: temperature | observations: 3200 -> 3300 | mean: 21.9592 | std: 2.0630
+2026-03-10 00:23:33,805  INFO      baseline  Baseline updated -- channel: humidity | observations: 3200 -> 3300 | mean: 54.9569 | std: 6.0162
+2026-03-10 00:23:33,805  INFO      baseline  Baseline updated -- channel: pressure | observations: 3200 -> 3300 | mean: 1013.0216 | std: 3.8628
+2026-03-10 00:23:33,805  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 3200 -> 3300 | mean: 10.0630 | std: 3.0743
+2026-03-10 00:23:33,807  INFO      detector  Z-score check -- channel: temperature | flagged: 0/100
+2026-03-10 00:23:33,808  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:23:33,809  INFO      detector  Z-score check -- channel: pressure | flagged: 2/100
+2026-03-10 00:23:33,810  INFO      detector  Z-score check -- channel: wind_speed | flagged: 2/100
+2026-03-10 00:23:33,968  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:23:33,971  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:23:33,998  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T002332.csv
+2026-03-10 00:23:34,028  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:23:34,057  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:23:34,090  INFO      processor  Processing complete -- raw/sensors_20260310T002332.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:24:33,738  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002432.csv -- queuing for processing
+2026-03-10 00:24:33,739  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002432.csv
+2026-03-10 00:24:33,809  INFO      processor  Loaded 100 rows from raw/sensors_20260310T002432.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:24:33,885  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:24:33,885  INFO      baseline  Baseline updated -- channel: temperature | observations: 3300 -> 3400 | mean: 21.9572 | std: 2.0595
+2026-03-10 00:24:33,886  INFO      baseline  Baseline updated -- channel: humidity | observations: 3300 -> 3400 | mean: 54.9556 | std: 6.0270
+2026-03-10 00:24:33,886  INFO      baseline  Baseline updated -- channel: pressure | observations: 3300 -> 3400 | mean: 1013.0178 | std: 3.8429
+2026-03-10 00:24:33,886  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 3300 -> 3400 | mean: 10.0403 | std: 3.1360
+2026-03-10 00:24:33,888  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-10 00:24:33,889  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:24:33,890  INFO      detector  Z-score check -- channel: pressure | flagged: 0/100
+2026-03-10 00:24:33,891  INFO      detector  Z-score check -- channel: wind_speed | flagged: 3/100
+2026-03-10 00:24:34,043  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:24:34,046  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:24:34,074  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T002432.csv
+2026-03-10 00:24:34,103  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:24:34,128  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:24:34,154  INFO      processor  Processing complete -- raw/sensors_20260310T002432.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:25:33,373  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002532.csv -- queuing for processing
+2026-03-10 00:25:33,375  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002532.csv
+2026-03-10 00:25:33,465  INFO      processor  Loaded 100 rows from raw/sensors_20260310T002532.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:25:33,599  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:25:33,599  INFO      baseline  Baseline updated -- channel: temperature | observations: 3400 -> 3500 | mean: 21.9649 | std: 2.0479
+2026-03-10 00:25:33,600  INFO      baseline  Baseline updated -- channel: humidity | observations: 3400 -> 3500 | mean: 54.9617 | std: 6.0344
+2026-03-10 00:25:33,600  INFO      baseline  Baseline updated -- channel: pressure | observations: 3400 -> 3500 | mean: 1013.0181 | std: 3.8237
+2026-03-10 00:25:33,600  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 3400 -> 3500 | mean: 10.0441 | std: 3.2427
+2026-03-10 00:25:33,602  INFO      detector  Z-score check -- channel: temperature | flagged: 0/100
+2026-03-10 00:25:33,603  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:25:33,604  INFO      detector  Z-score check -- channel: pressure | flagged: 0/100
+2026-03-10 00:25:33,605  INFO      detector  Z-score check -- channel: wind_speed | flagged: 4/100
+2026-03-10 00:25:33,759  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:25:33,762  INFO      detector  Detection complete -- total anomalies flagged: 7/100
+2026-03-10 00:25:33,804  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T002532.csv
+2026-03-10 00:25:33,836  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:25:33,901  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:25:33,934  INFO      processor  Processing complete -- raw/sensors_20260310T002532.csv | anomalies: 7/100 (7.0%)
+2026-03-10 00:26:33,903  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002632.csv -- queuing for processing
+2026-03-10 00:26:33,904  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002632.csv
+2026-03-10 00:26:33,980  INFO      processor  Loaded 100 rows from raw/sensors_20260310T002632.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:26:34,084  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:26:34,084  INFO      baseline  Baseline updated -- channel: temperature | observations: 3500 -> 3600 | mean: 21.9713 | std: 2.0413
+2026-03-10 00:26:34,085  INFO      baseline  Baseline updated -- channel: humidity | observations: 3500 -> 3600 | mean: 54.9603 | std: 6.0824
+2026-03-10 00:26:34,085  INFO      baseline  Baseline updated -- channel: pressure | observations: 3500 -> 3600 | mean: 1013.0160 | std: 3.8131
+2026-03-10 00:26:34,085  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 3500 -> 3600 | mean: 10.0509 | std: 3.2372
+2026-03-10 00:26:34,087  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-10 00:26:34,088  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-10 00:26:34,089  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:26:34,090  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:26:34,244  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:26:34,246  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:26:34,278  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T002632.csv
+2026-03-10 00:26:34,307  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:26:34,336  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:26:34,364  INFO      processor  Processing complete -- raw/sensors_20260310T002632.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:27:34,475  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002733.csv -- queuing for processing
+2026-03-10 00:27:34,476  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002733.csv
+2026-03-10 00:27:34,554  INFO      processor  Loaded 100 rows from raw/sensors_20260310T002733.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:27:34,657  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:27:34,658  INFO      baseline  Baseline updated -- channel: temperature | observations: 3600 -> 3700 | mean: 21.9648 | std: 2.0486
+2026-03-10 00:27:34,658  INFO      baseline  Baseline updated -- channel: humidity | observations: 3600 -> 3700 | mean: 54.9991 | std: 6.1481
+2026-03-10 00:27:34,659  INFO      baseline  Baseline updated -- channel: pressure | observations: 3600 -> 3700 | mean: 1013.0302 | std: 3.7929
+2026-03-10 00:27:34,659  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 3600 -> 3700 | mean: 10.0432 | std: 3.2298
+2026-03-10 00:27:34,660  INFO      detector  Z-score check -- channel: temperature | flagged: 2/100
+2026-03-10 00:27:34,661  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-10 00:27:34,663  INFO      detector  Z-score check -- channel: pressure | flagged: 0/100
+2026-03-10 00:27:34,664  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:27:34,823  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:27:34,826  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:27:34,864  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T002733.csv
+2026-03-10 00:27:34,924  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:27:34,986  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:27:35,022  INFO      processor  Processing complete -- raw/sensors_20260310T002733.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:28:34,991  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002833.csv -- queuing for processing
+2026-03-10 00:28:34,993  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002833.csv
+2026-03-10 00:28:35,070  INFO      processor  Loaded 100 rows from raw/sensors_20260310T002833.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:28:35,136  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:28:35,137  INFO      baseline  Baseline updated -- channel: temperature | observations: 3700 -> 3800 | mean: 21.9687 | std: 2.0350
+2026-03-10 00:28:35,137  INFO      baseline  Baseline updated -- channel: humidity | observations: 3700 -> 3800 | mean: 54.9692 | std: 6.1757
+2026-03-10 00:28:35,138  INFO      baseline  Baseline updated -- channel: pressure | observations: 3700 -> 3800 | mean: 1013.0318 | std: 3.8218
+2026-03-10 00:28:35,138  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 3700 -> 3800 | mean: 10.0497 | std: 3.2182
+2026-03-10 00:28:35,139  INFO      detector  Z-score check -- channel: temperature | flagged: 0/100
+2026-03-10 00:28:35,140  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-10 00:28:35,141  INFO      detector  Z-score check -- channel: pressure | flagged: 2/100
+2026-03-10 00:28:35,142  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:28:35,296  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:28:35,299  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:28:35,328  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T002833.csv
+2026-03-10 00:28:35,357  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:28:35,387  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:28:35,418  INFO      processor  Processing complete -- raw/sensors_20260310T002833.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:29:34,232  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002933.csv -- queuing for processing
+2026-03-10 00:29:34,233  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T002933.csv
+2026-03-10 00:29:34,307  INFO      processor  Loaded 100 rows from raw/sensors_20260310T002933.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:29:34,506  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:29:34,507  INFO      baseline  Baseline updated -- channel: temperature | observations: 3800 -> 3900 | mean: 21.9661 | std: 2.0306
+2026-03-10 00:29:34,507  INFO      baseline  Baseline updated -- channel: humidity | observations: 3800 -> 3900 | mean: 54.9828 | std: 6.2137
+2026-03-10 00:29:34,507  INFO      baseline  Baseline updated -- channel: pressure | observations: 3800 -> 3900 | mean: 1013.0258 | std: 3.8184
+2026-03-10 00:29:34,508  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 3800 -> 3900 | mean: 10.0469 | std: 3.2106
+2026-03-10 00:29:34,509  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-10 00:29:34,510  INFO      detector  Z-score check -- channel: humidity | flagged: 3/100
+2026-03-10 00:29:34,511  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:29:34,512  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:29:34,666  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:29:34,669  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:29:34,700  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T002933.csv
+2026-03-10 00:29:34,729  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:29:34,768  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:29:34,796  INFO      processor  Processing complete -- raw/sensors_20260310T002933.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:30:34,644  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003033.csv -- queuing for processing
+2026-03-10 00:30:34,645  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003033.csv
+2026-03-10 00:30:34,732  INFO      processor  Loaded 100 rows from raw/sensors_20260310T003033.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:30:34,871  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:30:34,872  INFO      baseline  Baseline updated -- channel: temperature | observations: 3900 -> 4000 | mean: 21.9566 | std: 2.0334
+2026-03-10 00:30:34,872  INFO      baseline  Baseline updated -- channel: humidity | observations: 3900 -> 4000 | mean: 54.9915 | std: 6.2069
+2026-03-10 00:30:34,872  INFO      baseline  Baseline updated -- channel: pressure | observations: 3900 -> 4000 | mean: 1013.0255 | std: 3.8041
+2026-03-10 00:30:34,873  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 3900 -> 4000 | mean: 10.0312 | std: 3.2030
+2026-03-10 00:30:34,874  INFO      detector  Z-score check -- channel: temperature | flagged: 2/100
+2026-03-10 00:30:34,876  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:30:34,877  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:30:34,878  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:30:35,133  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:30:35,137  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:30:35,172  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T003033.csv
+2026-03-10 00:30:35,202  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:30:35,268  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:30:35,300  INFO      processor  Processing complete -- raw/sensors_20260310T003033.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:31:35,222  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003133.csv -- queuing for processing
+2026-03-10 00:31:35,223  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003133.csv
+2026-03-10 00:31:35,295  INFO      processor  Loaded 100 rows from raw/sensors_20260310T003133.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:31:35,432  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:31:35,432  INFO      baseline  Baseline updated -- channel: temperature | observations: 4000 -> 4100 | mean: 21.9584 | std: 2.0333
+2026-03-10 00:31:35,433  INFO      baseline  Baseline updated -- channel: humidity | observations: 4000 -> 4100 | mean: 54.9869 | std: 6.2068
+2026-03-10 00:31:35,433  INFO      baseline  Baseline updated -- channel: pressure | observations: 4000 -> 4100 | mean: 1013.0275 | std: 3.7936
+2026-03-10 00:31:35,433  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 4000 -> 4100 | mean: 10.0379 | std: 3.1936
+2026-03-10 00:31:35,435  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-10 00:31:35,436  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-10 00:31:35,437  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:31:35,438  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:31:35,591  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:31:35,594  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:31:35,623  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T003133.csv
+2026-03-10 00:31:35,669  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:31:35,733  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:31:35,764  INFO      processor  Processing complete -- raw/sensors_20260310T003133.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:32:35,613  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003234.csv -- queuing for processing
+2026-03-10 00:32:35,614  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003234.csv
+2026-03-10 00:32:35,690  INFO      processor  Loaded 100 rows from raw/sensors_20260310T003234.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:32:35,805  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:32:35,805  INFO      baseline  Baseline updated -- channel: temperature | observations: 4100 -> 4200 | mean: 21.9524 | std: 2.0340
+2026-03-10 00:32:35,806  INFO      baseline  Baseline updated -- channel: humidity | observations: 4100 -> 4200 | mean: 54.9795 | std: 6.2124
+2026-03-10 00:32:35,806  INFO      baseline  Baseline updated -- channel: pressure | observations: 4100 -> 4200 | mean: 1013.0307 | std: 3.7691
+2026-03-10 00:32:35,807  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 4100 -> 4200 | mean: 10.0276 | std: 3.1877
+2026-03-10 00:32:35,808  INFO      detector  Z-score check -- channel: temperature | flagged: 2/100
+2026-03-10 00:32:35,809  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-10 00:32:35,810  INFO      detector  Z-score check -- channel: pressure | flagged: 0/100
+2026-03-10 00:32:35,811  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:32:35,963  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:32:35,966  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:32:35,996  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T003234.csv
+2026-03-10 00:32:36,022  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:32:36,084  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:32:36,118  INFO      processor  Processing complete -- raw/sensors_20260310T003234.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:33:35,365  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003334.csv -- queuing for processing
+2026-03-10 00:33:35,366  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003334.csv
+2026-03-10 00:33:35,444  INFO      processor  Loaded 100 rows from raw/sensors_20260310T003334.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:33:35,511  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:33:35,512  INFO      baseline  Baseline updated -- channel: temperature | observations: 4200 -> 4300 | mean: 21.9582 | std: 2.0401
+2026-03-10 00:33:35,513  INFO      baseline  Baseline updated -- channel: humidity | observations: 4200 -> 4300 | mean: 54.9841 | std: 6.2110
+2026-03-10 00:33:35,513  INFO      baseline  Baseline updated -- channel: pressure | observations: 4200 -> 4300 | mean: 1013.0312 | std: 3.7583
+2026-03-10 00:33:35,513  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 4200 -> 4300 | mean: 10.0220 | std: 3.1773
+2026-03-10 00:33:35,515  INFO      detector  Z-score check -- channel: temperature | flagged: 2/100
+2026-03-10 00:33:35,516  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:33:35,517  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:33:35,518  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:33:35,672  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:33:35,675  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:33:35,704  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T003334.csv
+2026-03-10 00:33:35,731  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:33:35,793  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:33:35,820  INFO      processor  Processing complete -- raw/sensors_20260310T003334.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:34:35,544  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003434.csv -- queuing for processing
+2026-03-10 00:34:35,545  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003434.csv
+2026-03-10 00:34:35,622  INFO      processor  Loaded 100 rows from raw/sensors_20260310T003434.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:34:35,763  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:34:35,764  INFO      baseline  Baseline updated -- channel: temperature | observations: 4300 -> 4400 | mean: 21.9679 | std: 2.0692
+2026-03-10 00:34:35,764  INFO      baseline  Baseline updated -- channel: humidity | observations: 4300 -> 4400 | mean: 54.9717 | std: 6.1796
+2026-03-10 00:34:35,765  INFO      baseline  Baseline updated -- channel: pressure | observations: 4300 -> 4400 | mean: 1013.0206 | std: 3.7578
+2026-03-10 00:34:35,765  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 4300 -> 4400 | mean: 10.0141 | std: 3.1614
+2026-03-10 00:34:35,766  INFO      detector  Z-score check -- channel: temperature | flagged: 3/100
+2026-03-10 00:34:35,767  INFO      detector  Z-score check -- channel: humidity | flagged: 0/100
+2026-03-10 00:34:35,768  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:34:35,769  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:34:35,923  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:34:35,926  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:34:36,023  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T003434.csv
+2026-03-10 00:34:36,059  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:34:36,110  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:34:36,154  INFO      processor  Processing complete -- raw/sensors_20260310T003434.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:35:36,103  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003534.csv -- queuing for processing
+2026-03-10 00:35:36,105  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003534.csv
+2026-03-10 00:35:36,178  INFO      processor  Loaded 100 rows from raw/sensors_20260310T003534.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:35:36,297  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:35:36,297  INFO      baseline  Baseline updated -- channel: temperature | observations: 4400 -> 4500 | mean: 21.9748 | std: 2.0638
+2026-03-10 00:35:36,298  INFO      baseline  Baseline updated -- channel: humidity | observations: 4400 -> 4500 | mean: 54.9976 | std: 6.1526
+2026-03-10 00:35:36,298  INFO      baseline  Baseline updated -- channel: pressure | observations: 4400 -> 4500 | mean: 1013.0073 | std: 3.7951
+2026-03-10 00:35:36,298  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 4400 -> 4500 | mean: 10.0110 | std: 3.1568
+2026-03-10 00:35:36,300  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-10 00:35:36,301  INFO      detector  Z-score check -- channel: humidity | flagged: 0/100
+2026-03-10 00:35:36,302  INFO      detector  Z-score check -- channel: pressure | flagged: 4/100
+2026-03-10 00:35:36,303  INFO      detector  Z-score check -- channel: wind_speed | flagged: 0/100
+2026-03-10 00:35:36,456  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:35:36,459  INFO      detector  Detection complete -- total anomalies flagged: 7/100
+2026-03-10 00:35:36,491  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T003534.csv
+2026-03-10 00:35:36,520  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:35:36,554  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:35:36,579  INFO      processor  Processing complete -- raw/sensors_20260310T003534.csv | anomalies: 7/100 (7.0%)
+2026-03-10 00:36:36,461  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003635.csv -- queuing for processing
+2026-03-10 00:36:36,462  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003635.csv
+2026-03-10 00:36:36,538  INFO      processor  Loaded 100 rows from raw/sensors_20260310T003635.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:36:36,659  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:36:36,659  INFO      baseline  Baseline updated -- channel: temperature | observations: 4500 -> 4600 | mean: 21.9745 | std: 2.0537
+2026-03-10 00:36:36,660  INFO      baseline  Baseline updated -- channel: humidity | observations: 4500 -> 4600 | mean: 54.9784 | std: 6.1423
+2026-03-10 00:36:36,660  INFO      baseline  Baseline updated -- channel: pressure | observations: 4500 -> 4600 | mean: 1012.9983 | std: 3.8060
+2026-03-10 00:36:36,660  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 4500 -> 4600 | mean: 10.0076 | std: 3.1588
+2026-03-10 00:36:36,662  INFO      detector  Z-score check -- channel: temperature | flagged: 0/100
+2026-03-10 00:36:36,663  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:36:36,664  INFO      detector  Z-score check -- channel: pressure | flagged: 2/100
+2026-03-10 00:36:36,665  INFO      detector  Z-score check -- channel: wind_speed | flagged: 2/100
+2026-03-10 00:36:36,818  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:36:36,821  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:36:36,890  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T003635.csv
+2026-03-10 00:36:36,924  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:36:36,970  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:36:37,001  INFO      processor  Processing complete -- raw/sensors_20260310T003635.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:37:36,081  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003735.csv -- queuing for processing
+2026-03-10 00:37:36,083  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003735.csv
+2026-03-10 00:37:36,159  INFO      processor  Loaded 100 rows from raw/sensors_20260310T003735.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:37:36,266  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:37:36,267  INFO      baseline  Baseline updated -- channel: temperature | observations: 4600 -> 4700 | mean: 21.9720 | std: 2.0464
+2026-03-10 00:37:36,267  INFO      baseline  Baseline updated -- channel: humidity | observations: 4600 -> 4700 | mean: 54.9890 | std: 6.1406
+2026-03-10 00:37:36,267  INFO      baseline  Baseline updated -- channel: pressure | observations: 4600 -> 4700 | mean: 1013.0029 | std: 3.7986
+2026-03-10 00:37:36,268  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 4600 -> 4700 | mean: 10.0034 | std: 3.1926
+2026-03-10 00:37:36,269  INFO      detector  Z-score check -- channel: temperature | flagged: 0/100
+2026-03-10 00:37:36,270  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:37:36,271  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:37:36,272  INFO      detector  Z-score check -- channel: wind_speed | flagged: 3/100
+2026-03-10 00:37:36,427  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:37:36,430  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:37:36,461  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T003735.csv
+2026-03-10 00:37:36,487  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:37:36,541  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:37:36,574  INFO      processor  Processing complete -- raw/sensors_20260310T003735.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:38:36,404  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003835.csv -- queuing for processing
+2026-03-10 00:38:36,405  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003835.csv
+2026-03-10 00:38:36,483  INFO      processor  Loaded 100 rows from raw/sensors_20260310T003835.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:38:36,563  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:38:36,564  INFO      baseline  Baseline updated -- channel: temperature | observations: 4700 -> 4800 | mean: 21.9706 | std: 2.0414
+2026-03-10 00:38:36,564  INFO      baseline  Baseline updated -- channel: humidity | observations: 4700 -> 4800 | mean: 54.9898 | std: 6.1531
+2026-03-10 00:38:36,565  INFO      baseline  Baseline updated -- channel: pressure | observations: 4700 -> 4800 | mean: 1013.0060 | std: 3.7858
+2026-03-10 00:38:36,565  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 4700 -> 4800 | mean: 10.0049 | std: 3.1920
+2026-03-10 00:38:36,566  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-10 00:38:36,567  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-10 00:38:36,568  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:38:36,569  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:38:36,723  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:38:36,726  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:38:36,762  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T003835.csv
+2026-03-10 00:38:36,790  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:38:36,847  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:38:36,879  INFO      processor  Processing complete -- raw/sensors_20260310T003835.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:39:36,773  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003935.csv -- queuing for processing
+2026-03-10 00:39:36,774  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T003935.csv
+2026-03-10 00:39:36,849  INFO      processor  Loaded 100 rows from raw/sensors_20260310T003935.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:39:36,965  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:39:36,966  INFO      baseline  Baseline updated -- channel: temperature | observations: 4800 -> 4900 | mean: 21.9706 | std: 2.0318
+2026-03-10 00:39:36,966  INFO      baseline  Baseline updated -- channel: humidity | observations: 4800 -> 4900 | mean: 54.9815 | std: 6.1432
+2026-03-10 00:39:36,966  INFO      baseline  Baseline updated -- channel: pressure | observations: 4800 -> 4900 | mean: 1012.9886 | std: 3.8124
+2026-03-10 00:39:36,967  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 4800 -> 4900 | mean: 9.9937 | std: 3.1891
+2026-03-10 00:39:36,968  INFO      detector  Z-score check -- channel: temperature | flagged: 0/100
+2026-03-10 00:39:36,969  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:39:36,970  INFO      detector  Z-score check -- channel: pressure | flagged: 2/100
+2026-03-10 00:39:36,971  INFO      detector  Z-score check -- channel: wind_speed | flagged: 2/100
+2026-03-10 00:39:37,124  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:39:37,127  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:39:37,159  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T003935.csv
+2026-03-10 00:39:37,187  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:39:37,224  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:39:37,249  INFO      processor  Processing complete -- raw/sensors_20260310T003935.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:40:37,324  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004035.csv -- queuing for processing
+2026-03-10 00:40:37,325  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004035.csv
+2026-03-10 00:40:37,414  INFO      processor  Loaded 100 rows from raw/sensors_20260310T004035.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:40:37,516  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:40:37,517  INFO      baseline  Baseline updated -- channel: temperature | observations: 4900 -> 5000 | mean: 21.9691 | std: 2.0327
+2026-03-10 00:40:37,517  INFO      baseline  Baseline updated -- channel: humidity | observations: 4900 -> 5000 | mean: 54.9774 | std: 6.1827
+2026-03-10 00:40:37,518  INFO      baseline  Baseline updated -- channel: pressure | observations: 4900 -> 5000 | mean: 1012.9841 | std: 3.7951
+2026-03-10 00:40:37,518  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 4900 -> 5000 | mean: 10.0027 | std: 3.1723
+2026-03-10 00:40:37,519  INFO      detector  Z-score check -- channel: temperature | flagged: 2/100
+2026-03-10 00:40:37,520  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-10 00:40:37,521  INFO      detector  Z-score check -- channel: pressure | flagged: 0/100
+2026-03-10 00:40:37,522  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:40:37,676  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:40:37,678  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:40:37,724  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T004035.csv
+2026-03-10 00:40:37,755  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:40:37,801  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:40:37,844  INFO      processor  Processing complete -- raw/sensors_20260310T004035.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:41:36,846  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004136.csv -- queuing for processing
+2026-03-10 00:41:36,847  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004136.csv
+2026-03-10 00:41:36,922  INFO      processor  Loaded 100 rows from raw/sensors_20260310T004136.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:41:37,007  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:41:37,008  INFO      baseline  Baseline updated -- channel: temperature | observations: 5000 -> 5100 | mean: 21.9698 | std: 2.0259
+2026-03-10 00:41:37,008  INFO      baseline  Baseline updated -- channel: humidity | observations: 5000 -> 5100 | mean: 54.9999 | std: 6.1676
+2026-03-10 00:41:37,009  INFO      baseline  Baseline updated -- channel: pressure | observations: 5000 -> 5100 | mean: 1012.9774 | std: 3.7902
+2026-03-10 00:41:37,009  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 5000 -> 5100 | mean: 10.0057 | std: 3.1771
+2026-03-10 00:41:37,010  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-10 00:41:37,011  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:41:37,012  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:41:37,013  INFO      detector  Z-score check -- channel: wind_speed | flagged: 2/100
+2026-03-10 00:41:37,168  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:41:37,171  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:41:37,204  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T004136.csv
+2026-03-10 00:41:37,233  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:41:37,284  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:41:37,311  INFO      processor  Processing complete -- raw/sensors_20260310T004136.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:42:37,221  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004236.csv -- queuing for processing
+2026-03-10 00:42:37,223  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004236.csv
+2026-03-10 00:42:37,298  INFO      processor  Loaded 100 rows from raw/sensors_20260310T004236.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:42:37,395  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:42:37,396  INFO      baseline  Baseline updated -- channel: temperature | observations: 5100 -> 5200 | mean: 21.9645 | std: 2.0174
+2026-03-10 00:42:37,396  INFO      baseline  Baseline updated -- channel: humidity | observations: 5100 -> 5200 | mean: 55.0043 | std: 6.1631
+2026-03-10 00:42:37,397  INFO      baseline  Baseline updated -- channel: pressure | observations: 5100 -> 5200 | mean: 1012.9671 | std: 3.7783
+2026-03-10 00:42:37,397  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 5100 -> 5200 | mean: 9.9973 | std: 3.2165
+2026-03-10 00:42:37,398  INFO      detector  Z-score check -- channel: temperature | flagged: 0/100
+2026-03-10 00:42:37,399  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-10 00:42:37,400  INFO      detector  Z-score check -- channel: pressure | flagged: 0/100
+2026-03-10 00:42:37,401  INFO      detector  Z-score check -- channel: wind_speed | flagged: 4/100
+2026-03-10 00:42:37,555  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:42:37,558  INFO      detector  Detection complete -- total anomalies flagged: 7/100
+2026-03-10 00:42:37,590  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T004236.csv
+2026-03-10 00:42:37,619  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:42:37,667  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:42:37,697  INFO      processor  Processing complete -- raw/sensors_20260310T004236.csv | anomalies: 7/100 (7.0%)
+2026-03-10 00:43:37,542  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004336.csv -- queuing for processing
+2026-03-10 00:43:37,543  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004336.csv
+2026-03-10 00:43:37,621  INFO      processor  Loaded 100 rows from raw/sensors_20260310T004336.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:43:37,695  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:43:37,696  INFO      baseline  Baseline updated -- channel: temperature | observations: 5200 -> 5300 | mean: 21.9625 | std: 2.0098
+2026-03-10 00:43:37,696  INFO      baseline  Baseline updated -- channel: humidity | observations: 5200 -> 5300 | mean: 55.0116 | std: 6.1582
+2026-03-10 00:43:37,696  INFO      baseline  Baseline updated -- channel: pressure | observations: 5200 -> 5300 | mean: 1012.9762 | std: 3.7826
+2026-03-10 00:43:37,697  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 5200 -> 5300 | mean: 10.0012 | std: 3.2079
+2026-03-10 00:43:37,698  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-10 00:43:37,699  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:43:37,700  INFO      detector  Z-score check -- channel: pressure | flagged: 2/100
+2026-03-10 00:43:37,701  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:43:37,854  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:43:37,857  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:43:37,890  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T004336.csv
+2026-03-10 00:43:37,920  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:43:38,009  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:43:38,041  INFO      processor  Processing complete -- raw/sensors_20260310T004336.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:44:37,259  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004436.csv -- queuing for processing
+2026-03-10 00:44:37,260  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004436.csv
+2026-03-10 00:44:37,334  INFO      processor  Loaded 100 rows from raw/sensors_20260310T004436.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:44:37,403  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:44:37,404  INFO      baseline  Baseline updated -- channel: temperature | observations: 5300 -> 5400 | mean: 21.9590 | std: 2.0022
+2026-03-10 00:44:37,404  INFO      baseline  Baseline updated -- channel: humidity | observations: 5300 -> 5400 | mean: 55.0195 | std: 6.1471
+2026-03-10 00:44:37,405  INFO      baseline  Baseline updated -- channel: pressure | observations: 5300 -> 5400 | mean: 1012.9757 | std: 3.7863
+2026-03-10 00:44:37,405  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 5300 -> 5400 | mean: 10.0023 | std: 3.2237
+2026-03-10 00:44:37,406  INFO      detector  Z-score check -- channel: temperature | flagged: 0/100
+2026-03-10 00:44:37,407  INFO      detector  Z-score check -- channel: humidity | flagged: 0/100
+2026-03-10 00:44:37,408  INFO      detector  Z-score check -- channel: pressure | flagged: 2/100
+2026-03-10 00:44:37,409  INFO      detector  Z-score check -- channel: wind_speed | flagged: 3/100
+2026-03-10 00:44:37,562  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:44:37,565  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:44:37,593  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T004436.csv
+2026-03-10 00:44:37,629  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:44:37,695  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:44:37,724  INFO      processor  Processing complete -- raw/sensors_20260310T004436.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:45:37,687  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004536.csv -- queuing for processing
+2026-03-10 00:45:37,688  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004536.csv
+2026-03-10 00:45:37,761  INFO      processor  Loaded 100 rows from raw/sensors_20260310T004536.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:45:37,836  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:45:37,837  INFO      baseline  Baseline updated -- channel: temperature | observations: 5400 -> 5500 | mean: 21.9577 | std: 2.0172
+2026-03-10 00:45:37,837  INFO      baseline  Baseline updated -- channel: humidity | observations: 5400 -> 5500 | mean: 55.0304 | std: 6.1797
+2026-03-10 00:45:37,838  INFO      baseline  Baseline updated -- channel: pressure | observations: 5400 -> 5500 | mean: 1012.9800 | std: 3.7776
+2026-03-10 00:45:37,838  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 5400 -> 5500 | mean: 10.0090 | std: 3.2117
+2026-03-10 00:45:37,839  INFO      detector  Z-score check -- channel: temperature | flagged: 3/100
+2026-03-10 00:45:37,840  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-10 00:45:37,841  INFO      detector  Z-score check -- channel: pressure | flagged: 0/100
+2026-03-10 00:45:37,842  INFO      detector  Z-score check -- channel: wind_speed | flagged: 0/100
+2026-03-10 00:45:37,999  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:45:38,002  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:45:38,035  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T004536.csv
+2026-03-10 00:45:38,064  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:45:38,096  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:45:38,126  INFO      processor  Processing complete -- raw/sensors_20260310T004536.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:46:38,223  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004637.csv -- queuing for processing
+2026-03-10 00:46:38,224  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004637.csv
+2026-03-10 00:46:38,313  INFO      processor  Loaded 100 rows from raw/sensors_20260310T004637.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:46:38,386  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:46:38,386  INFO      baseline  Baseline updated -- channel: temperature | observations: 5500 -> 5600 | mean: 21.9591 | std: 2.0181
+2026-03-10 00:46:38,387  INFO      baseline  Baseline updated -- channel: humidity | observations: 5500 -> 5600 | mean: 55.0157 | std: 6.1920
+2026-03-10 00:46:38,387  INFO      baseline  Baseline updated -- channel: pressure | observations: 5500 -> 5600 | mean: 1012.9853 | std: 3.7627
+2026-03-10 00:46:38,388  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 5500 -> 5600 | mean: 10.0075 | std: 3.2053
+2026-03-10 00:46:38,389  INFO      detector  Z-score check -- channel: temperature | flagged: 2/100
+2026-03-10 00:46:38,390  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:46:38,391  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:46:38,392  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:46:38,545  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:46:38,548  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:46:38,586  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T004637.csv
+2026-03-10 00:46:38,612  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:46:38,652  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:46:38,709  INFO      processor  Processing complete -- raw/sensors_20260310T004637.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:47:38,646  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004737.csv -- queuing for processing
+2026-03-10 00:47:38,647  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004737.csv
+2026-03-10 00:47:38,722  INFO      processor  Loaded 100 rows from raw/sensors_20260310T004737.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:47:38,795  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:47:38,796  INFO      baseline  Baseline updated -- channel: temperature | observations: 5600 -> 5700 | mean: 21.9607 | std: 2.0161
+2026-03-10 00:47:38,797  INFO      baseline  Baseline updated -- channel: humidity | observations: 5600 -> 5700 | mean: 55.0076 | std: 6.1930
+2026-03-10 00:47:38,797  INFO      baseline  Baseline updated -- channel: pressure | observations: 5600 -> 5700 | mean: 1012.9760 | std: 3.7588
+2026-03-10 00:47:38,797  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 5600 -> 5700 | mean: 10.0147 | std: 3.2049
+2026-03-10 00:47:38,799  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-10 00:47:38,800  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:47:38,801  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:47:38,802  INFO      detector  Z-score check -- channel: wind_speed | flagged: 2/100
+2026-03-10 00:47:38,955  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:47:38,958  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:47:38,987  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T004737.csv
+2026-03-10 00:47:39,016  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:47:39,044  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:47:39,070  INFO      processor  Processing complete -- raw/sensors_20260310T004737.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:48:38,906  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004837.csv -- queuing for processing
+2026-03-10 00:48:38,907  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004837.csv
+2026-03-10 00:48:38,982  INFO      processor  Loaded 100 rows from raw/sensors_20260310T004837.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:48:39,052  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:48:39,053  INFO      baseline  Baseline updated -- channel: temperature | observations: 5700 -> 5800 | mean: 21.9632 | std: 2.0250
+2026-03-10 00:48:39,054  INFO      baseline  Baseline updated -- channel: humidity | observations: 5700 -> 5800 | mean: 55.0021 | std: 6.2058
+2026-03-10 00:48:39,054  INFO      baseline  Baseline updated -- channel: pressure | observations: 5700 -> 5800 | mean: 1012.9815 | std: 3.7651
+2026-03-10 00:48:39,054  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 5700 -> 5800 | mean: 10.0112 | std: 3.1924
+2026-03-10 00:48:39,056  INFO      detector  Z-score check -- channel: temperature | flagged: 2/100
+2026-03-10 00:48:39,057  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-10 00:48:39,058  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:48:39,059  INFO      detector  Z-score check -- channel: wind_speed | flagged: 0/100
+2026-03-10 00:48:39,212  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:48:39,215  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:48:39,251  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T004837.csv
+2026-03-10 00:48:39,276  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:48:39,329  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:48:39,357  INFO      processor  Processing complete -- raw/sensors_20260310T004837.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:49:38,571  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004937.csv -- queuing for processing
+2026-03-10 00:49:38,572  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T004937.csv
+2026-03-10 00:49:38,702  INFO      processor  Loaded 100 rows from raw/sensors_20260310T004937.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:49:38,815  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:49:38,815  INFO      baseline  Baseline updated -- channel: temperature | observations: 5800 -> 5900 | mean: 21.9685 | std: 2.0410
+2026-03-10 00:49:38,816  INFO      baseline  Baseline updated -- channel: humidity | observations: 5800 -> 5900 | mean: 54.9942 | std: 6.2302
+2026-03-10 00:49:38,816  INFO      baseline  Baseline updated -- channel: pressure | observations: 5800 -> 5900 | mean: 1012.9806 | std: 3.7569
+2026-03-10 00:49:38,816  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 5800 -> 5900 | mean: 10.0022 | std: 3.1903
+2026-03-10 00:49:38,818  INFO      detector  Z-score check -- channel: temperature | flagged: 3/100
+2026-03-10 00:49:38,819  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:49:38,820  INFO      detector  Z-score check -- channel: pressure | flagged: 0/100
+2026-03-10 00:49:38,821  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:49:38,975  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:49:38,978  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:49:39,024  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T004937.csv
+2026-03-10 00:49:39,050  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:49:39,112  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:49:39,145  INFO      processor  Processing complete -- raw/sensors_20260310T004937.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:50:38,943  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T005038.csv -- queuing for processing
+2026-03-10 00:50:38,944  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T005038.csv
+2026-03-10 00:50:39,022  INFO      processor  Loaded 100 rows from raw/sensors_20260310T005038.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:50:39,097  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:50:39,097  INFO      baseline  Baseline updated -- channel: temperature | observations: 5900 -> 6000 | mean: 21.9681 | std: 2.0376
+2026-03-10 00:50:39,098  INFO      baseline  Baseline updated -- channel: humidity | observations: 5900 -> 6000 | mean: 55.0088 | std: 6.2563
+2026-03-10 00:50:39,098  INFO      baseline  Baseline updated -- channel: pressure | observations: 5900 -> 6000 | mean: 1012.9819 | std: 3.7505
+2026-03-10 00:50:39,098  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 5900 -> 6000 | mean: 10.0050 | std: 3.1895
+2026-03-10 00:50:39,100  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-10 00:50:39,101  INFO      detector  Z-score check -- channel: humidity | flagged: 2/100
+2026-03-10 00:50:39,102  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:50:39,103  INFO      detector  Z-score check -- channel: wind_speed | flagged: 1/100
+2026-03-10 00:50:39,257  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:50:39,260  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:50:39,295  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T005038.csv
+2026-03-10 00:50:39,326  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:50:39,362  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:50:39,393  INFO      processor  Processing complete -- raw/sensors_20260310T005038.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:51:39,593  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T005138.csv -- queuing for processing
+2026-03-10 00:51:39,595  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T005138.csv
+2026-03-10 00:51:39,669  INFO      processor  Loaded 100 rows from raw/sensors_20260310T005138.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:51:39,796  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:51:39,797  INFO      baseline  Baseline updated -- channel: temperature | observations: 6000 -> 6100 | mean: 21.9652 | std: 2.0312
+2026-03-10 00:51:39,797  INFO      baseline  Baseline updated -- channel: humidity | observations: 6000 -> 6100 | mean: 55.0198 | std: 6.2586
+2026-03-10 00:51:39,798  INFO      baseline  Baseline updated -- channel: pressure | observations: 6000 -> 6100 | mean: 1012.9845 | std: 3.7442
+2026-03-10 00:51:39,798  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 6000 -> 6100 | mean: 9.9997 | std: 3.2006
+2026-03-10 00:51:39,799  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-10 00:51:39,800  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:51:39,801  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:51:39,802  INFO      detector  Z-score check -- channel: wind_speed | flagged: 2/100
+2026-03-10 00:51:39,959  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:51:39,962  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:51:39,990  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T005138.csv
+2026-03-10 00:51:40,020  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:51:40,113  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:51:40,155  INFO      processor  Processing complete -- raw/sensors_20260310T005138.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:52:39,752  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T005238.csv -- queuing for processing
+2026-03-10 00:52:39,753  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T005238.csv
+2026-03-10 00:52:39,831  INFO      processor  Loaded 100 rows from raw/sensors_20260310T005238.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:52:39,918  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:52:39,919  INFO      baseline  Baseline updated -- channel: temperature | observations: 6100 -> 6200 | mean: 21.9660 | std: 2.0235
+2026-03-10 00:52:39,919  INFO      baseline  Baseline updated -- channel: humidity | observations: 6100 -> 6200 | mean: 55.0126 | std: 6.2640
+2026-03-10 00:52:39,920  INFO      baseline  Baseline updated -- channel: pressure | observations: 6100 -> 6200 | mean: 1012.9948 | std: 3.7539
+2026-03-10 00:52:39,920  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 6100 -> 6200 | mean: 10.0046 | std: 3.2134
+2026-03-10 00:52:39,921  INFO      detector  Z-score check -- channel: temperature | flagged: 0/100
+2026-03-10 00:52:39,922  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:52:39,923  INFO      detector  Z-score check -- channel: pressure | flagged: 2/100
+2026-03-10 00:52:39,924  INFO      detector  Z-score check -- channel: wind_speed | flagged: 2/100
+2026-03-10 00:52:40,078  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:52:40,081  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:52:40,126  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T005238.csv
+2026-03-10 00:52:40,154  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:52:40,219  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:52:40,249  INFO      processor  Processing complete -- raw/sensors_20260310T005238.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:53:39,338  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T005338.csv -- queuing for processing
+2026-03-10 00:53:39,340  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T005338.csv
+2026-03-10 00:53:39,411  INFO      processor  Loaded 100 rows from raw/sensors_20260310T005338.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:53:39,483  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:53:39,484  INFO      baseline  Baseline updated -- channel: temperature | observations: 6200 -> 6300 | mean: 21.9605 | std: 2.0262
+2026-03-10 00:53:39,484  INFO      baseline  Baseline updated -- channel: humidity | observations: 6200 -> 6300 | mean: 55.0182 | std: 6.2553
+2026-03-10 00:53:39,485  INFO      baseline  Baseline updated -- channel: pressure | observations: 6200 -> 6300 | mean: 1013.0025 | std: 3.7398
+2026-03-10 00:53:39,485  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 6200 -> 6300 | mean: 10.0012 | std: 3.2197
+2026-03-10 00:53:39,486  INFO      detector  Z-score check -- channel: temperature | flagged: 2/100
+2026-03-10 00:53:39,487  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:53:39,488  INFO      detector  Z-score check -- channel: pressure | flagged: 0/100
+2026-03-10 00:53:39,489  INFO      detector  Z-score check -- channel: wind_speed | flagged: 2/100
+2026-03-10 00:53:39,642  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:53:39,645  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:53:39,677  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T005338.csv
+2026-03-10 00:53:39,708  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:53:39,778  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:53:39,806  INFO      processor  Processing complete -- raw/sensors_20260310T005338.csv | anomalies: 5/100 (5.0%)
+2026-03-10 00:54:39,865  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T005438.csv -- queuing for processing
+2026-03-10 00:54:39,866  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T005438.csv
+2026-03-10 00:54:39,941  INFO      processor  Loaded 100 rows from raw/sensors_20260310T005438.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:54:40,305  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:54:40,306  INFO      baseline  Baseline updated -- channel: temperature | observations: 6300 -> 6400 | mean: 21.9564 | std: 2.0227
+2026-03-10 00:54:40,306  INFO      baseline  Baseline updated -- channel: humidity | observations: 6300 -> 6400 | mean: 55.0188 | std: 6.3264
+2026-03-10 00:54:40,306  INFO      baseline  Baseline updated -- channel: pressure | observations: 6300 -> 6400 | mean: 1013.0038 | std: 3.7392
+2026-03-10 00:54:40,307  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 6300 -> 6400 | mean: 10.0060 | std: 3.2043
+2026-03-10 00:54:40,308  INFO      detector  Z-score check -- channel: temperature | flagged: 1/100
+2026-03-10 00:54:40,309  INFO      detector  Z-score check -- channel: humidity | flagged: 3/100
+2026-03-10 00:54:40,310  INFO      detector  Z-score check -- channel: pressure | flagged: 1/100
+2026-03-10 00:54:40,311  INFO      detector  Z-score check -- channel: wind_speed | flagged: 0/100
+2026-03-10 00:54:40,465  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:54:40,468  INFO      detector  Detection complete -- total anomalies flagged: 6/100
+2026-03-10 00:54:40,507  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T005438.csv
+2026-03-10 00:54:40,537  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:54:40,580  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:54:40,615  INFO      processor  Processing complete -- raw/sensors_20260310T005438.csv | anomalies: 6/100 (6.0%)
+2026-03-10 00:55:40,285  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T005539.csv -- queuing for processing
+2026-03-10 00:55:40,287  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T005539.csv
+2026-03-10 00:55:40,362  INFO      processor  Loaded 100 rows from raw/sensors_20260310T005539.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:55:40,450  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:55:40,451  INFO      baseline  Baseline updated -- channel: temperature | observations: 6400 -> 6500 | mean: 21.9593 | std: 2.0229
+2026-03-10 00:55:40,451  INFO      baseline  Baseline updated -- channel: humidity | observations: 6400 -> 6500 | mean: 55.0296 | std: 6.3693
+2026-03-10 00:55:40,452  INFO      baseline  Baseline updated -- channel: pressure | observations: 6400 -> 6500 | mean: 1013.0052 | std: 3.7266
+2026-03-10 00:55:40,452  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 6400 -> 6500 | mean: 10.0056 | std: 3.1937
+2026-03-10 00:55:40,453  INFO      detector  Z-score check -- channel: temperature | flagged: 2/100
+2026-03-10 00:55:40,454  INFO      detector  Z-score check -- channel: humidity | flagged: 3/100
+2026-03-10 00:55:40,455  INFO      detector  Z-score check -- channel: pressure | flagged: 0/100
+2026-03-10 00:55:40,456  INFO      detector  Z-score check -- channel: wind_speed | flagged: 0/100
+2026-03-10 00:55:40,610  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:55:40,613  INFO      detector  Detection complete -- total anomalies flagged: 7/100
+2026-03-10 00:55:40,649  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T005539.csv
+2026-03-10 00:55:40,678  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:55:40,712  INFO      processor  Log file synced to s3://data-project-anomalybucket-5kf0ho7bxcvy/logs/anomaly_detection.log
+2026-03-10 00:55:40,743  INFO      processor  Processing complete -- raw/sensors_20260310T005539.csv | anomalies: 7/100 (7.0%)
+2026-03-10 00:56:40,637  INFO      app  New file arrived: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T005639.csv -- queuing for processing
+2026-03-10 00:56:40,639  INFO      processor  Starting processing: s3://data-project-anomalybucket-5kf0ho7bxcvy/raw/sensors_20260310T005639.csv
+2026-03-10 00:56:40,712  INFO      processor  Loaded 100 rows from raw/sensors_20260310T005639.csv | columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-10 00:56:40,811  INFO      baseline  Baseline loaded from s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
+2026-03-10 00:56:40,812  INFO      baseline  Baseline updated -- channel: temperature | observations: 6500 -> 6600 | mean: 21.9627 | std: 2.0150
+2026-03-10 00:56:40,812  INFO      baseline  Baseline updated -- channel: humidity | observations: 6500 -> 6600 | mean: 55.0242 | std: 6.3505
+2026-03-10 00:56:40,813  INFO      baseline  Baseline updated -- channel: pressure | observations: 6500 -> 6600 | mean: 1013.0210 | std: 3.7455
+2026-03-10 00:56:40,813  INFO      baseline  Baseline updated -- channel: wind_speed | observations: 6500 -> 6600 | mean: 10.0023 | std: 3.1974
+2026-03-10 00:56:40,814  INFO      detector  Z-score check -- channel: temperature | flagged: 0/100
+2026-03-10 00:56:40,815  INFO      detector  Z-score check -- channel: humidity | flagged: 1/100
+2026-03-10 00:56:40,817  INFO      detector  Z-score check -- channel: pressure | flagged: 2/100
+2026-03-10 00:56:40,817  INFO      detector  Z-score check -- channel: wind_speed | flagged: 2/100
+2026-03-10 00:56:40,972  INFO      detector  IsolationForest complete -- 5/100 points flagged as anomalies
+2026-03-10 00:56:40,975  INFO      detector  Detection complete -- total anomalies flagged: 5/100
+2026-03-10 00:56:41,008  INFO      processor  Scored file written to s3://data-project-anomalybucket-5kf0ho7bxcvy/processed/sensors_20260310T005639.csv
+2026-03-10 00:56:41,054  INFO      baseline  Baseline saved to s3://data-project-anomalybucket-5kf0ho7bxcvy/state/baseline.json
